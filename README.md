@@ -1,11 +1,23 @@
-Pr 2 : STEP 1: Clone Repo
+Here is your **clean, fully copyable step-by-step format** 👇
+
+---
+
+```bash
+# STEP 1: Clone Repo
 git clone https://github.com/rohit-7620/Car.git
 cd Car
-📁 STEP 2: Create ML Project Structure
+```
+
+```bash
+# STEP 2: Create ML Project Structure
 mkdir data models
 touch main.py model.py preprocessing.py
-🧠 STEP 3: Add RUNNABLE ML CODE
-✅ preprocessing.py
+```
+
+---
+
+```python
+# STEP 3: preprocessing.py
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
 
@@ -14,14 +26,20 @@ def load_and_split_data():
     X = data.data
     y = data.target
     return train_test_split(X, y, test_size=0.2, random_state=42)
-✅ model.py
+```
+
+```python
+# STEP 3: model.py
 from sklearn.ensemble import RandomForestClassifier
 
 def train_model(X_train, y_train):
     model = RandomForestClassifier()
     model.fit(X_train, y_train)
     return model
-✅ main.py
+```
+
+```python
+# STEP 3: main.py
 from preprocessing import load_and_split_data
 from model import train_model
 from sklearn.metrics import accuracy_score
@@ -37,18 +55,34 @@ def main():
 
 if __name__ == "__main__":
     main()
-▶️ STEP 4: Run Project
+```
+
+---
+
+```bash
+# STEP 4: Run Project
 pip install scikit-learn
 python main.py
-✅ STEP 5: Initial Commit (Main Branch)
+```
+
+```bash
+# STEP 5: Initial Commit (Main Branch)
 git add .
 git commit -m "Initial ML project setup"
 git push origin main
-🌿 STEP 6: Create Feature Branch 1 (Preprocessing Team)
+```
+
+---
+
+```bash
+# STEP 6: Create Feature Branch 1
 git checkout -b feature-preprocessing
+```
 
-👉 Update preprocessing.py:
-
+```python
+# Update preprocessing.py
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
 from sklearn.preprocessing import StandardScaler
 
 def load_and_split_data():
@@ -60,74 +94,119 @@ def load_and_split_data():
     X = scaler.fit_transform(X)
 
     return train_test_split(X, y, test_size=0.2, random_state=42)
+```
+
+```bash
 git add .
 git commit -m "Added scaling in preprocessing"
 git push -u origin feature-preprocessing
-🌿 STEP 7: Create Feature Branch 2 (Model Team)
+```
+
+---
+
+```bash
+# STEP 7: Create Feature Branch 2
 git checkout main
 git checkout -b feature-model
+```
 
-👉 Update model.py:
-
+```python
+# Update model.py
 from sklearn.linear_model import LogisticRegression
 
 def train_model(X_train, y_train):
     model = LogisticRegression(max_iter=200)
     model.fit(X_train, y_train)
     return model
+```
+
+```bash
 git add .
 git commit -m "Changed model to Logistic Regression"
 git push -u origin feature-model
-🔀 STEP 8: Merge Feature Branch 1
+```
+
+---
+
+```bash
+# STEP 8: Merge Feature Branch 1
 git checkout main
 git pull origin main
 git merge feature-preprocessing
 git push origin main
-⚠️ STEP 9: Merge Feature Branch 2 (Conflict)
+```
+
+---
+
+```bash
+# STEP 9: Merge Feature Branch 2 (Conflict)
 git merge feature-model
+```
 
-👉 Conflict in model.py:
-
+```text
+# Conflict in model.py
 <<<<<<< HEAD
 model = RandomForestClassifier()
 =======
 model = LogisticRegression(max_iter=200)
 >>>>>>> feature-model
-🛠️ STEP 10: Resolve Conflict
+```
 
-👉 Final model.py:
+---
 
+```python
+# STEP 10: Resolve Conflict (final model.py)
 from sklearn.ensemble import RandomForestClassifier
 
 def train_model(X_train, y_train):
     model = RandomForestClassifier(n_estimators=100)
     model.fit(X_train, y_train)
     return model
+```
+
+```bash
 git add model.py
 git commit -m "Resolved conflict and finalized model"
-🚀 STEP 11: Push Final Code
+```
+
+---
+
+```bash
+# STEP 11: Push Final Code
 git push origin main
-🧹 STEP 12: Delete Feature Branches
+```
+
+---
+
+```bash
+# STEP 12: Delete Feature Branches
 git branch -d feature-preprocessing
 git branch -d feature-model
 
 git push origin --delete feature-preprocessing
 git push origin --delete feature-model
-🎯 FINAL OUTPUT (WHAT YOU ACHIEVED)
+```
 
-✔ Created ML project from scratch
-✔ Created separate feature branches
-✔ Worked like multiple team members
-✔ Merged branches into main
-✔ Handled merge conflict professionally
+---
 
-🔥 BONUS (VERY IMPORTANT FOR YOUR PROFILE)
-Add .gitignore
+```bash
+# BONUS: Add .gitignore
 touch .gitignore
+```
+
+```text
 __pycache__/
 *.pkl
 *.csv
 .env
+```
+
+```bash
 git add .gitignore
 git commit -m "Added gitignore"
 git push origin main
+```
+
+---
+
+If you want, I can convert this into a **resume-ready project description (with "written by me")** or **LinkedIn post** 🔥
