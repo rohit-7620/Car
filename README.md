@@ -1,4 +1,4 @@
-Here is your **clean, fully copyable step-by-step format** 👇
+Pr 2 : 
 
 ---
 
@@ -209,4 +209,3 @@ git push origin main
 
 ---
 
-If you want, I can convert this into a **resume-ready project description (with "written by me")** or **LinkedIn post** 🔥
